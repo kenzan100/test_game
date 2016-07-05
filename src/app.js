@@ -1,15 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { TodoList } from './components';
+import { GameBoard } from './components';
 
-const dummyTodos = [
-  { id: 0, isDone: true,  text: 'a' },
-  { id: 1, isDone: false, text: 'b' },
-  { id: 2, isDone: true,  text: 'c' },
-  { id: 3, isDone: true,  text: 'd' },
+const dummyCards = [
+  { id: 0, place: 'hand', img_url: 'http://static.ddmcdn.com/gif/4--animal-selfies--151222.jpg' },
+  { id: 1, place: 'hand', img_url: 'http://i.telegraph.co.uk/multimedia/archive/03578/chip--wide_3578582k.jpg' },
 ]
 
 render(
-  <TodoList todos={ dummyTodos } />,
+  <GameBoard cards={ dummyCards } />,
   document.getElementById('app')
 );

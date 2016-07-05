@@ -1,26 +1,25 @@
 import React from 'react';
+import { Image } from './image';
 
-export function Todo(props) {
-  const { todo } = props;
-  if ( todo.isDone ) {
-    return <strike>{ todo.text }</strike>
-  } else {
-    return <span>{ todo.text }</span>
-  }
+export function Card(props) {
+  const { card } = props;
+  return(
+    <div className='card'>
+      <Image src={ card.img_url } height={ 100 }/>
+      <span>{ card.id }</span>
+    </div>
+  );
 }
 
-export function TodoList(props) {
-  const { todos } = props;
+export function GameBoard(props) {
+  const { cards } = props;
   return (
-    <div className='todo'>
-      <input type="text" placeholder='Add todo' />
-      <ul className='todo__list'>
-        { todos.map( t => (
-          <li key={ t.id } className='todo__item'>
-            <Todo todo={ t } />
-          </li>
-          ))}
-      </ul>
+    <div className='board'>
+      { cards.map( c => (
+        <div key={ c.id } className='card__item'>
+          <Card card={ c } />
+        </div>
+        ))}
     </div>
   );
 }
