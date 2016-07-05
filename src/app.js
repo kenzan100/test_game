@@ -8,6 +8,6 @@ const dummyCards = [
 ]
 
 render(
-  <GameBoard cards={ dummyCards } />,
+  <GameBoard enemy_cards={ dummyCards } my_cards={ dummyCards } />,
   document.getElementById('app')
 );

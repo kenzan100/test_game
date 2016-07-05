@@ -5,21 +5,30 @@ export function Card(props) {
   const { card } = props;
   return(
     <div className='card'>
-      <Image src={ card.img_url } height={ 100 }/>
+      <Image className='card__image' src={ card.img_url } height={ 100 }/>
       <span>{ card.id }</span>
     </div>
   );
 }
 
 export function GameBoard(props) {
-  const { cards } = props;
+  const { enemy_cards, my_cards } = props;
   return (
     <div className='board'>
-      { cards.map( c => (
-        <div key={ c.id } className='card__item'>
-          <Card card={ c } />
-        </div>
-        ))}
+      <div className='enemy__board'>
+        { enemy_cards.map( c => (
+          <div key={ c.id } className='card__item'>
+            <Card card={ c } />
+          </div>
+          ))}
+      </div>
+      <div className='my__board'>
+        { my_cards.map( c => (
+          <div key={ c.id } className='card__item'>
+            <Card card={ c } />
+          </div>
+          ))}
+      </div>
     </div>
   );
 }

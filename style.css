@@ -1,0 +1,8 @@
+.card__item {
+  display: inline-block;
+  width: 100px;
+}
+
+.enemy__board .card__image {
+  transform: rotate(180deg);
+}
